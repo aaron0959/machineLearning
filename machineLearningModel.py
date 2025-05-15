@@ -8,7 +8,7 @@ from tensorflow.keras.preprocessing import image
 import os
 #^IMPORTS
 
-base_dir = 'J:/OneDrive/UNI/S Shukla/SWE6204/A1/MURA-v1.1'#path to access dataset
+base_dir = ''#path to access dataset --> insert own path for MURA dataset
 #setting up base directory to access the dataset
 train_labelledCSV = os.path.join(base_dir, 'train_labeled_studies.csv')
 valid_labelledCSV = os.path.join(base_dir, 'valid_labeled_studies.csv')
@@ -193,7 +193,7 @@ def predImg(model, path, imageHeight, imageWidth):
   prediction = model.predict(imgArr)
   return prediction[0][0]
 
-newImagePath = 'J:/OneDrive/UNI/S Shukla/SWE6204/A1/Testdata/healthy2.jpeg'
+newImagePath = '' # insert path to image wanting to be trialed
 probOfAbnormality = predImg(model, newImagePath, imageHeight, imageWidth)
 
 if probOfAbnormality > 0.5:
